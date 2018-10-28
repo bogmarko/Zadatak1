@@ -7,11 +7,8 @@ var conf = require("./config.js");
 module.exports.random = function() {
 
 	if (typeof min !== "number" || typeof max !== "number") {
-
 		return "Error NaN";
-
 	} else {
-
 		return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
 }
@@ -27,14 +24,10 @@ module.exports.minIntegerFromArray = function() {
 		newArray = [];
 
 		isInArray.forEach(function(item){
-
 		if (typeof item == "number") {
-
 			newArray.push(item);
 			x = Math.min(...newArray);
-
 		} else {
-
 			x = "False";			
 		}
 	});
@@ -52,14 +45,10 @@ module.exports.minIntegerFromString = function(){
 	 x = someText.match(/\d+/g);
 
 	if (x === null) {
-
 		return "False";
-
 	} else {
-
 		return Math.min(...x);
 	}
-	
 };
 
 
@@ -74,9 +63,7 @@ module.exports.concatStringsByLength = function() {
 	if (type == 0){
 
 	arrayOfString.sort(function(a, b) {
- 
 		return	a.length - b.length;
-
 	});
 		return arrayOfString.join(""); 
 
@@ -85,12 +72,12 @@ module.exports.concatStringsByLength = function() {
    } else if (type == 1) {
 
    		arrayOfString.sort(function(a, b) {
- 
 		return	b.length - a.length;
-
 	});
    		return arrayOfString.join("");
 
+
+   		
    } else {
    			return "Error";
    }
