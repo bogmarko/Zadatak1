@@ -58,7 +58,7 @@ module.exports.minIntegerFromString = function(){
 
 
 
-//function concatStringsByLength
+// function concatStringsByLength
 
 module.exports.concatStringsByLength = function() {
 
