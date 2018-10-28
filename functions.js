@@ -20,12 +20,14 @@ module.exports.random = function() {
 
 module.exports.minIntegerFromArray = function() {
 
-		newArray = [];
+	var	newArray = [];
 
 		isInArray.forEach(function(item){
 		if (typeof item == "number") {
 			newArray.push(item);
+ 		// jshint ignore: start
 			x = Math.min(...newArray);
+		// jshint ignore: end
 		} else {
 			x = "False";			
 		}
@@ -41,13 +43,15 @@ module.exports.minIntegerFromArray = function() {
 
 module.exports.minIntegerFromString = function(){
 
-	 x = someText.match(/\d+/g);
-
+	var x = someText.match(/\d+/g);
+	 
 	if (x === null) {
 		return "False";
 	} else {
+		// jshint ignore: start
 		return Math.min(...x);
-	}
+		// jshint ignore: end
+	}	
 };
 
 
@@ -61,22 +65,17 @@ module.exports.concatStringsByLength = function() {
 	
 	if (type == 0){
 
-	arrayOfString.sort(function(a, b) {
-		return	a.length - b.length;
+		arrayOfString.sort(function(a, b) {
+			return	a.length - b.length;
 	});
-		return arrayOfString.join(""); 
-
-
+			return arrayOfString.join(""); 
 
    } else if (type == 1) {
 
    		arrayOfString.sort(function(a, b) {
-		return	b.length - a.length;
+			return	b.length - a.length;
 	});
-   		return arrayOfString.join("");
-
-
-   		
+   			return arrayOfString.join("");
    } else {
    			return "Error";
    }
