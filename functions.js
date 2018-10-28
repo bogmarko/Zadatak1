@@ -25,9 +25,9 @@ module.exports.minIntegerFromArray = function() {
 		isInArray.forEach(function(item){
 		if (typeof item == "number") {
 			newArray.push(item);
- 		// jshint ignore: start
+ 			// jshint ignore: start
 			x = Math.min(...newArray);
-		// jshint ignore: end
+			// jshint ignore: end
 		} else {
 			x = "False";			
 		}
