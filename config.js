@@ -1,6 +1,6 @@
 // function random
 
-min = 1;
+min = "asd1";
 max = 10;
 
 

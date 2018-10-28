@@ -6,7 +6,7 @@ var conf = require("./config.js");
 
 module.exports.random = function() {
 
-	if (typeof min && typeof max !== "number") {
+	if (typeof min !== "number" || typeof max !== "number") {
 
 		return "Error NaN";
 
@@ -16,14 +16,7 @@ module.exports.random = function() {
 	}
 }
 
-/* 
-	or 
-		function getRndInteger(min, max) {
 	
-		return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-*/
-
 
 
 
