@@ -6,7 +6,7 @@ max = 10;
 
 // function miniIntegerFromArray
 
-isInArray = ["one", 2, 3, false, "five", 6, 7, "eight", "nine", 10];
+const = isInArray = ["one", 2, 3, false, "five", 6, 7, "eight", "nine", 10];
 
 
 
