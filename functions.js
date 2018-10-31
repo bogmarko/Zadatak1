@@ -1,85 +1,68 @@
-var conf = require("./config.js");
+var config = require("./config.js");
 
 
 
-// function random
+// Function random
 
 module.exports.random = function() {
-
-	if (typeof min !== "number" || typeof max !== "number") {
+	if (typeof config.min !== "number" || typeof config.max !== "number") {
 		return "Error NaN";
 	} else {
-		return Math.floor(Math.random() * (max - min + 1)) + min;
+		return Math.floor(Math.random() * (config.max - config.min + 1)) + config.min;
 	}
 };
 	
 
 
 
-// function minIntegerFromArray
+// Function minIntegerFromArray
 
-module.exports.minIntegerFromArray = function() {
-
-	var	newArray = [];
-
-		isInArray.forEach(function(item){
+module.exports.minIntegerFromArray = function minIntegerFromArray() {
+	var newArray = [];
+	var x;
+	config.isInArray.forEach(function(item){
 		if (typeof item == "number") {
 			newArray.push(item);
- 			// jshint ignore: start
-			x = Math.min(...newArray);
-			// jshint ignore: end
+			x = Math.min(...newArray);	
 		} else {
 			x = "False";			
 		}
 	});
-			return x;
+	return x;
 };
 
 
 
 
+// Function minIntegerFromString
 
-// function minIntegerFromString
-
-module.exports.minIntegerFromString = function(){
-
-	var x = someText.match(/\d+/g);
-	 
+module.exports.minIntegerFromString = function minIntegerFromString(){
+	var x = config.someText.match(/\d+/g); 
 	if (x === null) {
 		return "False";
-	} else {
-		// jshint ignore: start
+	} else {	
 		return Math.min(...x);
-		// jshint ignore: end
 	}	
 };
 
 
 
+// Function concatStringsByLength
 
-
-// function concatStringsByLength
-
-module.exports.concatStringsByLength = function() {
-
-	
-	if (type == 0){
-
-		arrayOfString.sort(function(a, b) {
+module.exports.concatStringsByLength = function concatStringsByLength() {
+	if (config.type == 0){
+		config.arrayOfString.sort(function(a, b) {
 			return	a.length - b.length;
-	});
-			return arrayOfString.join(""); 
-
-   } else if (type == 1) {
-
-   		arrayOfString.sort(function(a, b) {
+		});
+		return config.arrayOfString.join(""); 
+	} else if (config.type == 1) {
+		config.arrayOfString.sort(function(a, b) {
 			return	b.length - a.length;
-	});
-   			return arrayOfString.join("");
-   } else {
-   			return "Error";
-   }
-
+		});
+		return config.arrayOfString.join("");
+	} else {
+		return "Error";
+	}
 };
 
 
