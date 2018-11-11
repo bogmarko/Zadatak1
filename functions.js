@@ -1,68 +1,64 @@
 var config = require("./config.js");
 
+exports.minimum = config.min;
+exports.maximum = config.max;
+exports.isInArray = config.isInArray;
+exports.someText = config.someText;
+exports.type = config.type;
+exports.arrayOfString = config.arrayOfString;
 
 
-// Function random
-
-module.exports.random = function() {
-	if (typeof config.min !== "number" || typeof config.max !== "number") {
-		return "Error NaN";
+exports.random = function(minimum, maximum) {
+	var result;
+	if (typeof minimum !== "number" || typeof maximum !== "number") {
+		result = "Error NaN";
 	} else {
-		return Math.floor(Math.random() * (config.max - config.min + 1)) + config.min;
+		result = Math.floor(Math.random() * (maximum - config.min + 1)) + minimum;
 	}
-};
-	
 
+	return result;
+}
 
-
-// Function minIntegerFromArray
-
-module.exports.minIntegerFromArray = function minIntegerFromArray() {
+exports.minIntegerFromArray = function(isInArray) {
 	var newArray = [];
-	var x;
-	config.isInArray.forEach(function(item){
+	var result;
+	isInArray.forEach(function(item){
 		if (typeof item == "number") {
 			newArray.push(item);
-			x = Math.min(...newArray);	
+			result = Math.min(...newArray);	
 		} else {
-			x = "False";			
+			result = "False";			
 		}
 	});
-	return x;
-};
+	return result;
+}
 
-
-
-
-// Function minIntegerFromString
-
-module.exports.minIntegerFromString = function minIntegerFromString(){
-	var x = config.someText.match(/\d+/g); 
-	if (x === null) {
-		return "False";
+exports.minIntegerFromString = function(someText){
+	var regex = someText.match(/\d+/g); 
+	var result;
+	if (regex === null) {
+		result = "False";
 	} else {	
-		return Math.min(...x);
+		result = Math.min(...regex);
 	}	
-};
 
+	return result;
+}
 
-
-// Function concatStringsByLength
-
-module.exports.concatStringsByLength = function concatStringsByLength() {
-	if (config.type == 0){
-		config.arrayOfString.sort(function(a, b) {
-			return	a.length - b.length;
+exports.concatStringsByLength = function(type,arrayOfString) {
+	var result;
+	if (type == 0){
+		arrayOfString.sort(function(a, b) {
+			return a.length - b.length;
 		});
-		return config.arrayOfString.join(""); 
-	} else if (config.type == 1) {
-		config.arrayOfString.sort(function(a, b) {
-			return	b.length - a.length;
+		result = arrayOfString.join(""); 
+	} else if (type == 1) {
+		arrayOfString.sort(function(a, b) {
+			return b.length - a.length;
 		});
-		return config.arrayOfString.join("");
+		result = arrayOfString.join("");
 	} else {
 		return "Error";
 	}
-};
-
-
+	return result;
+}
