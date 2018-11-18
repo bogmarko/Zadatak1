@@ -1,19 +1,10 @@
-var config = require("./config.js");
 
-exports.minimum = config.min;
-exports.maximum = config.max;
-exports.isInArray = config.isInArray;
-exports.someText = config.someText;
-exports.type = config.type;
-exports.arrayOfString = config.arrayOfString;
-
-
-exports.random = function(minimum, maximum) {
+exports.random = function(min, max) {
 	var result;
-	if (typeof minimum !== "number" || typeof maximum !== "number") {
+	if (typeof min !== "number" || typeof max !== "number") {
 		result = "Error NaN";
 	} else {
-		result = Math.floor(Math.random() * (maximum - config.min + 1)) + minimum;
+		result = Math.floor(Math.random() * (max - min + 1)) + min;
 	}
 
 	return result;

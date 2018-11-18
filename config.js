@@ -10,4 +10,4 @@ exports.someText = "Maja car,(1985) pravi dar mar 24h dnevno 7 dana u nedelji, 3
 
 // Function concatStringsByLength
 exports.arrayOfString = ["as3", "kjksz6", "aezakm7", "heh4", "nizz5"];
-exports.type = 1;
+exports.type = 0;
